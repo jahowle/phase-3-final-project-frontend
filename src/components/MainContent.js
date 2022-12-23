@@ -4,7 +4,7 @@ import NeedCard from "./NeedCard";
 function MainContent({needs}) {
 
     const needsToDisplay = needs.map((need) => {
-        return <NeedCard key={need.id} category={need.category.name} description={need.description} amount={need.amount} neighbor={need.neighbor.name}/>
+        return <NeedCard key={need.id} category={need.category.name} description={need.description} amount={need.amount} neighbor={need.neighbor.name} funded={need.funded}/>
     })
 
     return(

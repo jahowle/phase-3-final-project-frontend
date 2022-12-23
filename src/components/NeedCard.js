@@ -1,6 +1,6 @@
 import React from "react";
 
-function NeedCard({description, amount, neighbor, category}) {
+function NeedCard({description, amount, neighbor, category, funded}) {
 
 
     return(
@@ -9,6 +9,7 @@ function NeedCard({description, amount, neighbor, category}) {
             <h4>${amount}</h4>
             <h4>{category}</h4>
             <p>{description}</p>
+            <p>Funded: {funded ? 'Yes' : 'No'}</p>
         </div>
     )
 
