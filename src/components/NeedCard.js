@@ -1,6 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 
 function NeedCard({description, amount, neighbor, category, funded}) {
+
+    const [needState, setNeedState] = useState(funded)
+
+    function updateNeedState() {
+        setNeedState(!needState)
+    }
 
 
     return(
@@ -10,7 +16,7 @@ function NeedCard({description, amount, neighbor, category, funded}) {
             <h4>{category}</h4>
             <p>{description}</p>
             <p>Funded: {funded ? 'Yes' : 'No'}</p>
-            <button disabled={funded}>Fund</button>
+            <button disabled={needState} onClick={updateNeedState}>Fund</button>
         </div>
     )
 
