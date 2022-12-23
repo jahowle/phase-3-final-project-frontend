@@ -1,12 +1,27 @@
 import React, {useState} from "react";
 
-function NeedCard({description, amount, neighbor, category, funded}) {
+function NeedCard({description, amount, neighbor, category, funded, id}) {
 
     const [needState, setNeedState] = useState(funded)
 
     function updateNeedState() {
-        setNeedState(!needState)
-    }
+        fetch(`http://localhost:9292/needs/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                funded: !needState,
+            }),
+            })
+            .then((r) => r.json())
+            .then((data) => console.log(data))
+
+            setNeedState(!needState)
+        }
+
+
+
 
 
     return(
