@@ -6,9 +6,15 @@ function App() {
 
   const [needs, setNeeds] = useState([])
 
+  useEffect(() => {
+    fetch("http://localhost:9292/needs")
+      .then((r) => r.json())
+      .then((data) => setNeeds(data));
+  }, []);
+
   return (
     <div className="App">
-      <MainContent />
+      <MainContent needs={needs}/>
     </div>
   );
 }

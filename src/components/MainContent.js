@@ -1,10 +1,16 @@
 import React, {useEffect} from "react";
+import NeedCard from "./NeedCard";
 
-function MainContent() {
+function MainContent({needs}) {
+
+    const needsToDisplay = needs.map((need) => {
+        return <NeedCard key={need.id} category={need.category.name} description={need.description} amount={need.amount} neighbor={need.neighbor.name}/>
+    })
 
     return(
         <div>
-            <p> Main Content Here</p>
+            <h1>These are the needs</h1>
+            <div>{needsToDisplay}</div>
         </div>
     )
 }
