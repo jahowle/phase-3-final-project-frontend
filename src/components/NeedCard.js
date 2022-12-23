@@ -10,6 +10,7 @@ function NeedCard({description, amount, neighbor, category, funded}) {
             <h4>{category}</h4>
             <p>{description}</p>
             <p>Funded: {funded ? 'Yes' : 'No'}</p>
+            <button disabled={funded}>Fund</button>
         </div>
     )
 
