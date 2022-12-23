@@ -10,7 +10,7 @@ function MainContent({needs}) {
     return(
         <div>
             <h1>These are the needs</h1>
-            <div>{needsToDisplay}</div>
+            <div className="needs-list">{needsToDisplay}</div>
         </div>
     )
 }
