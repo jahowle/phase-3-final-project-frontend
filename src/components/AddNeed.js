@@ -26,7 +26,7 @@ function AddNeed() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form id="add-need-form" onSubmit={handleSubmit}>
                 <label>Neighbor Name
                     <input
                     type="text"
@@ -35,6 +35,37 @@ function AddNeed() {
                     value={formData.neighborName}
                     />
                 </label>
+                <label>Amount
+                    <input
+                    type="number"
+                    name="amount"
+                    onChange={handleChange}
+                    value={formData.amount}
+                    min="1"
+                    max="400"
+                    />
+                </label>
+                <label>Category
+                    <select name="category" onChange={handleChange} value={formData.category}>
+                        <option value="groceries">Groceries</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="groceries">Groceries</option>
+                    </select>
+                </label>
+                <label>Description
+                    <input
+                        type="text"
+                        name="description"
+                        onChange={handleChange}
+                        value={formData.description}
+                    />
+                </label>
+                <button type="submit">Submit Need</button>
+
 
             </form>
         </div>
