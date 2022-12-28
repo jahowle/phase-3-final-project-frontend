@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import NeedCard from "./NeedCard";
+import { NavLink } from "react-router-dom";
 
 function MainContent({needs}) {
 
@@ -10,6 +11,11 @@ function MainContent({needs}) {
     return(
         <div>
             <h1>These are the needs</h1>
+            <button>
+                <NavLink to="/addneed" exact>
+                Add Need
+                </NavLink>
+            </button>
             <div className="needs-list">{needsToDisplay}</div>
         </div>
     )
