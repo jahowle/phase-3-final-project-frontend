@@ -1,11 +1,13 @@
 import React, {useState} from "react";
+import LocationSelect from "./LocationSelect";
 
 function AddNeed() {
 
     const [formData, setFormData] = useState({
         neighborName: "",
+        location: undefined,
         amount: 0,
-        category: null,
+        category: undefined,
         description: "",
     })
 
@@ -34,6 +36,9 @@ function AddNeed() {
                     onChange={handleChange}
                     value={formData.neighborName}
                     />
+                </label>
+                <label>Location
+                    <LocationSelect handleChange={handleChange} formData={formData}/>
                 </label>
                 <label>Amount
                     <input
