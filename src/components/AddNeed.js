@@ -3,12 +3,13 @@ import CategorySelect from "./CategorySelect";
 import LocationSelect from "./LocationSelect";
 import PartnerSelect from "./PartnerSelect";
 
-function AddNeed() {
+function AddNeed(updateNeeds) {
 
     const [formData, setFormData] = useState({
         neighborName: "",
         bio: "",
         location: undefined,
+        partner: undefined,
         amount: 0,
         category: undefined,
         description: "",
@@ -26,8 +27,46 @@ function AddNeed() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(formData)
+
+        fetch("http://localhost:9292/neighbors", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: formData.neighborName,
+                bio: formData.bio,
+                location_id: formData.location,
+                partner_id: formData.partner,
+            })
+        })
+        .then((r) => r.json())
+        .then((data) => handleNeedSubmit(data))
+
     }
+
+    function handleNeedSubmit(data) {
+
+        fetch("http://localhost:9292/needs", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            amount: formData.amount,
+            neighbor_id: data.id,
+            category_id: formData.category,
+            description: formData.description,
+            funded: false
+        }),
+    })
+    .then((r) => r.json())
+    .then((data) => console.log(data))
+
+
+    }
+
+    
 
     return (
         <div>
