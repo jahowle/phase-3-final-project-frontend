@@ -1,10 +1,13 @@
 import React, {useState} from "react";
+import CategorySelect from "./CategorySelect";
 import LocationSelect from "./LocationSelect";
+import PartnerSelect from "./PartnerSelect";
 
 function AddNeed() {
 
     const [formData, setFormData] = useState({
         neighborName: "",
+        bio: "",
         location: undefined,
         amount: 0,
         category: undefined,
@@ -37,8 +40,17 @@ function AddNeed() {
                     value={formData.neighborName}
                     />
                 </label>
+
+                <label>Neighbor Bio
+                    <textarea rows="4" cols="50" name="bio" onChange={handleChange} value={formData.bio}/>
+                </label>
+
                 <label>Location
                     <LocationSelect handleChange={handleChange} formData={formData}/>
+                </label>
+
+                <label>Partner
+                    <PartnerSelect handleChange={handleChange} formData={formData}/>
                 </label>
                 <label>Amount
                     <input
@@ -50,17 +62,11 @@ function AddNeed() {
                     max="400"
                     />
                 </label>
+
                 <label>Category
-                    <select name="category" onChange={handleChange} value={formData.category}>
-                        <option value="groceries">Groceries</option>
-                        <option value="transportation">Transportation</option>
-                        <option value="groceries">Groceries</option>
-                        <option value="groceries">Groceries</option>
-                        <option value="groceries">Groceries</option>
-                        <option value="groceries">Groceries</option>
-                        <option value="groceries">Groceries</option>
-                    </select>
+                    <CategorySelect handleChange={handleChange} formData={formData}/>
                 </label>
+                
                 <label>Description
                     <input
                         type="text"
