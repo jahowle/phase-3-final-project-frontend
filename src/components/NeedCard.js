@@ -30,7 +30,7 @@ function NeedCard({description, amount, neighbor, category, funded, id}) {
             <h4>${amount}</h4>
             <h4>{category}</h4>
             <p>{description}</p>
-            <p>Funded: {funded ? 'Yes' : 'No'}</p>
+            <p>Funded: {needState ? 'Yes' : 'No'}</p>
             <button disabled={needState} onClick={updateNeedState}>Fund</button>
         </div>
     )
