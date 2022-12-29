@@ -3,7 +3,7 @@ import CategorySelect from "./CategorySelect";
 import LocationSelect from "./LocationSelect";
 import PartnerSelect from "./PartnerSelect";
 
-function AddNeed() {
+function AddNeed({updateNeeds}) {
 
     const [formData, setFormData] = useState({
         neighborName: "",
@@ -62,7 +62,7 @@ function AddNeed() {
         }),
     })
     .then((r) => r.json())
-    .then((data) => console.log(data))
+    .then((data) => updateNeeds(data))
 
 
     }

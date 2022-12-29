@@ -14,15 +14,18 @@ function App() {
       .then((data) => setNeeds(data));
   }, []);
 
-//   function handleUpdateNeeds() {
-//     console.log("This is a new need in App.js")
-// }
+  function updateNeeds(newNeed) {
+
+    setNeeds(...needs, newNeed)
+    
+  }
+
 
   return (
     <div className="App">
       <Switch>
         <Route exact path="/addneed">
-          <AddNeed />
+          <AddNeed updateNeeds={updateNeeds}/>
         </Route>
         <Route exact path="/">
       <MainContent needs={needs}/>
