@@ -11,7 +11,7 @@ function MainContent({needs, handleDelete}) {
 
     return(
         <div>
-            <h1>These are the needs</h1>
+            <h1>NeighborShare</h1>
             <button>
                 <NavLink to="/addneed" exact>
                 Add Need

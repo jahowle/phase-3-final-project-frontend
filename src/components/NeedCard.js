@@ -34,15 +34,17 @@ function NeedCard({description, amount, neighbor, category, funded, id, handleDe
 
     return(
         <div className="need-card">
-            <div onClick={deleteNeed}>
+            <div className="close-icon" onClick={deleteNeed}>
                 <h3>X</h3>
             </div>
+            <div className="card-content">
             <h3>{neighbor}</h3>
             <h4>${amount}</h4>
             <h4>{category}</h4>
             <p>{description}</p>
             <p>Funded: {needState ? 'Yes' : 'No'}</p>
             <button disabled={needState} onClick={updateNeedState}>Fund</button>
+            </div>
         </div>
     )
 

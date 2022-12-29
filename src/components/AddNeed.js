@@ -76,8 +76,9 @@ function AddNeed({updateNeeds}) {
 
     return (
         <div>
+            <h1>Add a Need</h1>
             <form id="add-need-form" onSubmit={handleSubmit}>
-                <label>Neighbor Name
+                <label className="input">Neighbor Name
                     <input
                     type="text"
                     name="neighborName"
@@ -86,18 +87,18 @@ function AddNeed({updateNeeds}) {
                     />
                 </label>
 
-                <label>Neighbor Bio
+                <label className="input">Neighbor Bio
                     <textarea rows="4" cols="50" name="bio" onChange={handleChange} value={formData.bio}/>
                 </label>
 
-                <label>Location
+                <label className="input">Location
                     <LocationSelect handleChange={handleChange} formData={formData}/>
                 </label>
 
-                <label>Partner
+                <label className="input">Partner
                     <PartnerSelect handleChange={handleChange} formData={formData}/>
                 </label>
-                <label>Amount
+                <label className="input">Amount
                     <input
                     type="number"
                     name="amount"
@@ -108,11 +109,11 @@ function AddNeed({updateNeeds}) {
                     />
                 </label>
 
-                <label>Category
+                <label className="input">Category
                     <CategorySelect handleChange={handleChange} formData={formData}/>
                 </label>
                 
-                <label>Description
+                <label className="input">Description
                     <input
                         type="text"
                         name="description"
@@ -120,7 +121,7 @@ function AddNeed({updateNeeds}) {
                         value={formData.description}
                     />
                 </label>
-                <button type="submit">Submit Need</button>
+                <button id="submit-button" type="submit">Submit Need</button>
 
 
             </form>
