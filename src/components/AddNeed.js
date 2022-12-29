@@ -3,7 +3,7 @@ import CategorySelect from "./CategorySelect";
 import LocationSelect from "./LocationSelect";
 import PartnerSelect from "./PartnerSelect";
 
-function AddNeed(updateNeeds) {
+function AddNeed() {
 
     const [formData, setFormData] = useState({
         neighborName: "",
@@ -14,6 +14,7 @@ function AddNeed(updateNeeds) {
         category: undefined,
         description: "",
     })
+
 
     function handleChange(e) {
         const name = e.target.name

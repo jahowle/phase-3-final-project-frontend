@@ -4,8 +4,10 @@ import { NavLink } from "react-router-dom";
 
 function MainContent({needs}) {
 
+
     const needsToDisplay = needs.map((need) => {
-        return <NeedCard id={need.id} key={need.id} category={need.category.name} description={need.description} amount={need.amount} neighbor={need.neighbor.name} funded={need.funded}/>
+        console.log(need.category)
+        return <NeedCard key={need.id} id={need.id} amount={need.amount} funded={need.funded} neighbor={need.neighbor.name} category={need.category.name} description={need.description} />
     })
 
     return(
