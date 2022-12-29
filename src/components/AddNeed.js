@@ -65,7 +65,7 @@ function AddNeed({updateNeeds}) {
         }),
     })
     .then((r) => r.json())
-    .then((data) => console.log(data))
+    .then((data) => updateNeeds(data))
 
     history.push("/");
 

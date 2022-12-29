@@ -12,11 +12,11 @@ function App() {
     fetch("http://localhost:9292/needs")
       .then((r) => r.json())
       .then((data) => setNeeds(data));
-  }, []);
+  }, [needs]);
 
   function updateNeeds(newNeed) {
 
-    setNeeds(...needs, newNeed)
+    console.log(newNeed)
     
   }
 
