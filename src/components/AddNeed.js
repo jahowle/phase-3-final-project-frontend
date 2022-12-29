@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useHistory } from "react-router-dom"
+import { NavLink, useHistory } from "react-router-dom";
 import CategorySelect from "./CategorySelect";
 import LocationSelect from "./LocationSelect";
 import PartnerSelect from "./PartnerSelect";
@@ -65,12 +65,12 @@ function AddNeed({updateNeeds}) {
         }),
     })
     .then((r) => r.json())
-    .then((data) => updateNeeds(data))
+    .then((data) => console.log(data))
 
-    history.push("/testroute");
-
+    history.push("/");
 
     }
+
 
     
 
@@ -124,6 +124,10 @@ function AddNeed({updateNeeds}) {
 
 
             </form>
+            <button>
+                <NavLink to="/" exact>
+               Go Home
+                </NavLink></button>
         </div>
     )
 }

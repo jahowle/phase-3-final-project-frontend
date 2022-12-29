@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function NeedCard({description, amount, neighbor, category, funded, id}) {
+function NeedCard({description, amount, neighbor, category, funded, id, handleDelete}) {
 
     const [needState, setNeedState] = useState(funded)
 
@@ -20,12 +20,19 @@ function NeedCard({description, amount, neighbor, category, funded, id}) {
             setNeedState(!needState)
         }
 
+    function deleteNeed() {
+        console.log("deleting need")
+    }
+
 
 
 
 
     return(
         <div className="need-card">
+            <div onClick={deleteNeed}>
+                <h3>X</h3>
+            </div>
             <h3>{neighbor}</h3>
             <h4>${amount}</h4>
             <h4>{category}</h4>
