@@ -6,7 +6,6 @@ function MainContent({needs}) {
 
 
     const needsToDisplay = needs.map((need) => {
-        console.log(need.category)
         return <NeedCard key={need.id} id={need.id} amount={need.amount} funded={need.funded} neighbor={need.neighbor.name} category={need.category.name} description={need.description} />
     })
 

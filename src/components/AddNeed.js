@@ -1,9 +1,12 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom"
 import CategorySelect from "./CategorySelect";
 import LocationSelect from "./LocationSelect";
 import PartnerSelect from "./PartnerSelect";
 
 function AddNeed({updateNeeds}) {
+
+    const history = useHistory();
 
     const [formData, setFormData] = useState({
         neighborName: "",
@@ -63,6 +66,8 @@ function AddNeed({updateNeeds}) {
     })
     .then((r) => r.json())
     .then((data) => updateNeeds(data))
+
+    history.push("/testroute");
 
 
     }
