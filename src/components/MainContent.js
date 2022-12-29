@@ -2,11 +2,11 @@ import React, {useEffect} from "react";
 import NeedCard from "./NeedCard";
 import { NavLink } from "react-router-dom";
 
-function MainContent({needs}) {
+function MainContent({needs, handleDelete}) {
 
 
     const needsToDisplay = needs.map((need) => {
-        return <NeedCard key={need.id} id={need.id} amount={need.amount} funded={need.funded} neighbor={need.neighbor.name} category={need.category.name} description={need.description} />
+        return <NeedCard handleDelete={handleDelete} key={need.id} id={need.id} amount={need.amount} funded={need.funded} neighbor={need.neighbor.name} category={need.category.name} description={need.description} />
     })
 
     return(

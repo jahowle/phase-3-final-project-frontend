@@ -21,7 +21,11 @@ function NeedCard({description, amount, neighbor, category, funded, id, handleDe
         }
 
     function deleteNeed() {
-        console.log("deleting need")
+        fetch(`http://localhost:9292/needs/${id}`, {
+            method: "DELETE",
+        })
+        .then((r) => r.json())
+        .then((data) => handleDelete(data))
     }
 
 

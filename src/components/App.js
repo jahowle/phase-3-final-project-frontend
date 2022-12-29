@@ -21,6 +21,11 @@ function App() {
     
   }
 
+  function handleDelete(deletedNeed) {
+    const updatedNeeds = needs.filter((need) => need.id !== deletedNeed.id)
+    setNeeds(updatedNeeds)
+  }
+
 
   return (
     <div className="App">
@@ -32,7 +37,7 @@ function App() {
           <TestRoute />
         </Route>
         <Route exact path="/">
-      <MainContent needs={needs}/>
+      <MainContent needs={needs} handleDelete={handleDelete}/>
       </Route>
       </Switch>
     </div>
