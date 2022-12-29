@@ -17,6 +17,7 @@ function PartnerSelect({handleChange, formData}) {
 
     return(
         <select name="partner" onChange={handleChange} value={formData.partner}>
+            <option value="">--Please choose a Partner-</option>
             {partnerOptions}
         </select>
        

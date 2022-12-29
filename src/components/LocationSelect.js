@@ -17,6 +17,7 @@ function LocationSelect({handleChange, formData}) {
 
     return(
         <select name="location" onChange={handleChange} value={formData.location}>
+            <option value="">--Please choose a Location-</option>
             {locationOptions}
         </select>
        

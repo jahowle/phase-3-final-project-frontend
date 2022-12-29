@@ -17,6 +17,7 @@ function CategorySelect({handleChange, formData}) {
 
     return(
         <select name="category" onChange={handleChange} value={formData.category}>
+            <option value="">--Please choose a Category-</option>
             {categoryOptions}
         </select>
        
