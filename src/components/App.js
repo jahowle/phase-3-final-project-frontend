@@ -1,7 +1,6 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
 import MainContent from './MainContent';
-import TestRoute from './TestRoute';
 import AddNeed from './AddNeed';
 import { Route, Switch } from "react-router-dom";
 
@@ -32,9 +31,6 @@ function App() {
       <Switch>
         <Route exact path="/addneed">
           <AddNeed updateNeeds={updateNeeds}/>
-        </Route>
-        <Route exact path="/testroute">
-          <TestRoute />
         </Route>
         <Route exact path="/">
       <MainContent needs={needs} handleDelete={handleDelete}/>
